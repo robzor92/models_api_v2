@@ -13,7 +13,7 @@ A Redesign of the model registry API to be more object-oriented and similar to h
 # (H)pswork(s) (M)odel (R)egistry
 import hsmr
 # Create a connection
-connection = homer.connection()
+connection = hsmr.connection()
 # Get the model registry handle for the project's model registry
 mr = connection.get_model_registry()
 
