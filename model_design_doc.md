@@ -36,7 +36,7 @@ model_meta = mr.create_model(name="mnist",
 			     await_registration=300,
 			     project=None)
 			     
-# save meta object and upload model to hsfs		     
+# alternatively, call save on this meta object and upload model to hsfs		     
 model_meta.save("/dir_with_model")
 
 ```
