@@ -49,8 +49,22 @@ An existing model can be found by invoking the `get_model` function.
 
 model_meta = mr.get_model(name="mnist",
                           version=1,
-			  project=None)
+			  project=None)			  
 			  
+```
+
+### Delete
+
+An existing model can be deleted by invoking the `delete` function on the meta object.
+
+```python
+
+model_meta = mr.get_model(name="mnist",
+                          version=1,
+			  project=None)
+
+model_meta.delete()
+
 ```
 
 ### Finding best model version
