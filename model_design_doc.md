@@ -25,6 +25,22 @@ mr = connection.get_model_registry()
 
 Instead of calling `model.export`, users create a model by invoking the `create_model` function.
 
+```python
+
+model_meta = mr.create_model(name="mnist",
+                             version=1,
+			     model_path="/dir_with_model"
+			     overwrite=False,
+			     metrics=None,
+			     description=None,
+			     await_registration=300,
+			     project=None)
+			     
+# alternatively, call save on this meta object and upload model to hsfs		     
+model_meta.save("/dir_with_model")
+
+```
+
 As a reference, when a model is saved in mlflow, a great deal of informaton is saved to describe the model in addition to what we currently save for TensorFlow.
 
 https://www.mlflow.org/docs/latest/python_api/mlflow.tensorflow.html#mlflow.tensorflow.save_model
@@ -57,23 +73,6 @@ Keep in mind those are specific to TensorFlow. There is also support for a large
 - Fastai(fastai)
 - Statsmodels (statsmodels)
 
-
-
-```python
-
-model_meta = mr.create_model(name="mnist",
-                             version=1,
-			     model_path="/dir_with_model"
-			     overwrite=False,
-			     metrics=None,
-			     description=None,
-			     await_registration=300,
-			     project=None)
-			     
-# alternatively, call save on this meta object and upload model to hsfs		     
-model_meta.save("/dir_with_model")
-
-```
 
 ### Get
 
