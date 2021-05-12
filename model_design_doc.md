@@ -50,6 +50,7 @@ An existing model can be found by invoking the `get_model` function.
 model_meta = mr.get_model(name="mnist",
                           version=1,
 			  project=None)
+			  
 ```
 
 ### Finding best model version
@@ -65,6 +66,7 @@ model_meta_list = mr.get_models(name="mnist",
 				direction=None)
 				
 best_model_meta = model_meta_list[0]
+
 ```
 
 
