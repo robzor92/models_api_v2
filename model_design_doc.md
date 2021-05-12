@@ -54,6 +54,7 @@ signature – (Experimental) ModelSignature describes model input and output Sch
 input_example – (Experimental) Input example provides one or several instances of valid model input. The example can be used as a hint of what data to feed the model. The given example can be a Pandas DataFrame where the given example will be serialized to json using the Pandas split-oriented format, or a numpy array where the example will be serialized to json by converting it to a list. Bytes are base64-encoded.
 
 Keep in mind those are specific to TensorFlow. There is also support for a large amount of other models to provide custom information, such as.
+https://www.mlflow.org/docs/latest/models.html#model-api
 
 - Python Function (python_function)
 - R Function (crate)
