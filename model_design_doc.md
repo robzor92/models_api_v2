@@ -25,6 +25,40 @@ mr = connection.get_model_registry()
 
 Instead of calling `model.export`, users create a model by invoking the `create_model` function.
 
+As a reference, when a model is saved in mlflow, a great deal of informaton is saved to describe the model in addition to what we currently save for TensorFlow.
+
+https://www.mlflow.org/docs/latest/python_api/mlflow.tensorflow.html#mlflow.tensorflow.save_model
+
+Such as:
+
+tf_meta_graph_tags – A list of tags identifying the model’s metagraph within the serialized SavedModel object. For more information, see the tags parameter of the tf.saved_model.builder.savedmodelbuilder method.
+
+signature – (Experimental) ModelSignature describes model input and output Schema. The model signature can be inferred from datasets with valid model input (e.g. the training dataset with target column omitted) and valid model output (e.g. model predictions generated on the training dataset).
+
+input_example – (Experimental) Input example provides one or several instances of valid model input. The example can be used as a hint of what data to feed the model. The given example can be a Pandas DataFrame where the given example will be serialized to json using the Pandas split-oriented format, or a numpy array where the example will be serialized to json by converting it to a list. Bytes are base64-encoded.
+
+Keep in mind those are specific to TensorFlow. There is also support for a large amount of other models to provide custom information, such as.
+
+- Python Function (python_function)
+- R Function (crate)
+- H2O (h2o)
+- Keras (keras)
+- MLeap (mleap)
+- PyTorch (pytorch)
+- Scikit-learn (sklearn)
+- Spark MLlib (spark)
+- TensorFlow (tensorflow)
+- ONNX (onnx)
+- MXNet Gluon (gluon)
+- XGBoost (xgboost)
+- LightGBM (lightgbm)
+- CatBoost (catboost)
+- Spacy(spaCy)
+- Fastai(fastai)
+- Statsmodels (statsmodels)
+
+
+
 ```python
 
 model_meta = mr.create_model(name="mnist",
