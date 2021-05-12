@@ -43,7 +43,6 @@ model_meta.save("/dir_with_model")
 
 ### Get
 
-
 An existing model can be found by invoking the `get_model` function.
 
 ```python
@@ -53,9 +52,20 @@ model_meta = mr.get_model(name="mnist",
 			  project=None)
 ```
 
-### Explore
+### Finding best model version
 
 
+The best performing version of a model family can be found by invoking the `get_models` function
+
+```python
+
+model_meta_list = mr.get_models(name="mnist",
+                                sort_key=None,
+				project=None,
+				direction=None)
+				
+best_model_meta = model_meta_list[0]
+```
 
 
 
