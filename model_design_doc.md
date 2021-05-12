@@ -23,7 +23,7 @@ mr = connection.get_model_registry()
 
 ### Create 
 
-Instead of calling model.export, users create a model by invoking the `create_model` function.
+Instead of calling `model.export`, users create a model by invoking the `create_model` function.
 
 ```python
 
