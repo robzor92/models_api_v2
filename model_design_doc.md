@@ -10,8 +10,8 @@ A Redesign of the model registry API to be more object-oriented and similar to h
 
 ```python
 
-# (Ho)psworks (M)od(e)l (R)egistry
-import homer
+# (H)pswork(s) (M)odel (R)egistry
+import hsmr
 # Create a connection
 connection = homer.connection()
 # Get the model registry handle for the project's model registry
