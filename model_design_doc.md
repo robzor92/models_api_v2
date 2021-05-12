@@ -61,8 +61,8 @@ The best performing version of a model family can be found by invoking the `get_
 ```python
 
 model_meta_list = mr.get_models(name="mnist",
-                                sort_key=None,
-				direction=None,
+                                sort_key="accuracy",
+				direction="desc",
 				project=None)
 				
 best_model_meta = model_meta_list[0]
