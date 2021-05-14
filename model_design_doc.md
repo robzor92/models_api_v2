@@ -35,10 +35,18 @@ model_meta = mr.create_model(name="mnist",
 			     description=None,
 			     await_registration=300)
 			     
+			     
+			     
 # alternatively, call save on this meta object and upload model to hsfs		     
 model_meta.save("/dir_with_model")
 
 ```
+
+We should add inferring the schema of the model:
+
+https://www.mlflow.org/docs/latest/python_api/mlflow.models.html#mlflow.models.ModelSignature
+
+
 
 As a reference, when a model is saved in mlflow, a great deal of informaton is saved to describe the model in addition to what we currently save for TensorFlow.
 
