@@ -14,7 +14,7 @@ A Redesign of the model registry API to be more object-oriented and similar to h
 import hsmr
 # Create a connection
 connection = hsmr.connection()
-# Get the model registry handle for the project's model registry
+# Get the model registry handle for a project's model registry
 mr = connection.get_model_registry()
 
 
@@ -33,8 +33,7 @@ model_meta = mr.create_model(name="mnist",
 			     overwrite=False,
 			     metrics=None,
 			     description=None,
-			     await_registration=300,
-			     project=None)
+			     await_registration=300)
 			     
 # alternatively, call save on this meta object and upload model to hsfs		     
 model_meta.save("/dir_with_model")
@@ -82,8 +81,7 @@ An existing model can be found by invoking the `get_model` function.
 ```python
 
 model_meta = mr.get_model(name="mnist",
-                          version=1,
-			  project=None)			  
+                          version=1)			  
 			  
 ```
 
@@ -94,8 +92,7 @@ An existing model can be deleted by invoking the `delete` function on the meta o
 ```python
 
 model_meta = mr.get_model(name="mnist",
-                          version=1,
-			  project=None)
+                          version=1)
 
 model_meta.delete()
 
@@ -110,8 +107,7 @@ The best performing version of a model family can be found by invoking the `get_
 
 model_meta_list = mr.get_models(name="mnist",
                                 sort_key="accuracy",
-				order="desc",
-				project=None)
+				order="desc")
 				
 best_model_meta = model_meta_list[0]
 
