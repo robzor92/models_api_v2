@@ -43,7 +43,7 @@ model_meta.save("/dir_with_model")
 Note - currently in the registry the most crucial feature we are missing is the input shape for the training dataset, and the shape of the predictions.
 We should add that in the saving of a model and show it in the UI.
 
-We should add inferring the schema of the model:
+mlflow provides an *infer* function
 
 https://www.mlflow.org/docs/latest/python_api/mlflow.models.html#mlflow.models.ModelSignature
 
