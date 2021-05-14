@@ -21,6 +21,38 @@ mr = connection.get_model_registry()
 
 ```
 
+### Model attributes
+
+  String id;
+
+  String name;
+
+  int version;
+  
+  String projectName;
+
+  String userFullName;
+
+  Long created;
+  
+  Signature signature;
+
+  ModelResult metrics;
+
+  String description;
+
+  String[] environment;
+
+  String program;
+  
+  String experimentId;
+  
+  String experimentProjectName;
+
+  String kernelId;
+
+  String jobName;
+
 ### Create 
 
 Instead of calling `model.export`, users create a model by invoking the `create_model` function.
