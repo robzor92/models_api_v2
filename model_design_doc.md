@@ -114,7 +114,7 @@ https://www.mlflow.org/docs/latest/models.html#model-api
 - Fastai(fastai)
 - Statsmodels (statsmodels)
 
-### Get
+### Get meta object
 
 An existing model can be found by invoking the `get_model` function.
 
@@ -124,6 +124,21 @@ model_meta = mr.get_model(name="mnist",
                           version=1)			  
 			  
 ```
+
+
+### Get model provenance
+
+
+
+```python
+
+model_meta = mr.get_model(name="mnist",
+                          version=1)
+			  
+model_meta.get_experiment().get_td()
+			  
+```
+
 
 ### Delete
 
