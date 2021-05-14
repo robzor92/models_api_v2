@@ -30,6 +30,7 @@ Instead of calling `model.export`, users create a model by invoking the `create_
 model_meta = mr.create_model(name="mnist",
                              version=1,
 			     model_path="/dir_with_model" # Alternatively, this can be provided in the save below
+			     signature=infer(df, ,
 			     overwrite=False,
 			     metrics=None,
 			     description=None,
@@ -40,23 +41,16 @@ model_meta.save("/dir_with_model")
 
 ```
 
-We should add inferring the schema of the model:
 
-https://www.mlflow.org/docs/latest/python_api/mlflow.models.html#mlflow.models.ModelSignature
-
-
-
-As a reference, when a model is saved in mlflow, a great deal of informaton is saved to describe the model in addition to what we currently save for TensorFlow.
+As a reference, when a model is saved in mlflow, a great deal of informaton is saved to describe the model depending on the machine learning library. For example for TensorFlow.
 
 https://www.mlflow.org/docs/latest/python_api/mlflow.tensorflow.html#mlflow.tensorflow.save_model
 
-Such as:
+*tf_meta_graph_tags* – A list of tags identifying the model’s metagraph within the serialized SavedModel object. For more information, see the tags parameter of the tf.saved_model.builder.savedmodelbuilder method.
 
-tf_meta_graph_tags – A list of tags identifying the model’s metagraph within the serialized SavedModel object. For more information, see the tags parameter of the tf.saved_model.builder.savedmodelbuilder method.
+*signature* – (Experimental) ModelSignature describes model input and output Schema. The model signature can be inferred from datasets with valid model input (e.g. the training dataset with target column omitted) and valid model output (e.g. model predictions generated on the training dataset).
 
-signature – (Experimental) ModelSignature describes model input and output Schema. The model signature can be inferred from datasets with valid model input (e.g. the training dataset with target column omitted) and valid model output (e.g. model predictions generated on the training dataset).
-
-input_example – (Experimental) Input example provides one or several instances of valid model input. The example can be used as a hint of what data to feed the model. The given example can be a Pandas DataFrame where the given example will be serialized to json using the Pandas split-oriented format, or a numpy array where the example will be serialized to json by converting it to a list. Bytes are base64-encoded.
+*input_example* – (Experimental) Input example provides one or several instances of valid model input. The example can be used as a hint of what data to feed the model. The given example can be a Pandas DataFrame where the given example will be serialized to json using the Pandas split-oriented format, or a numpy array where the example will be serialized to json by converting it to a list. Bytes are base64-encoded.
 
 Keep in mind those are specific to TensorFlow. There is also support for a large amount of other models to provide custom information, such as.
 https://www.mlflow.org/docs/latest/models.html#model-api
@@ -78,6 +72,15 @@ https://www.mlflow.org/docs/latest/models.html#model-api
 - Spacy(spaCy)
 - Fastai(fastai)
 - Statsmodels (statsmodels)
+
+
+We should add inferring the schema of the model:
+
+https://www.mlflow.org/docs/latest/python_api/mlflow.models.html#mlflow.models.ModelSignature
+
+
+![Screenshot from 2021-05-14 10-24-04](https://user-images.githubusercontent.com/9936580/118243298-930f0680-b49e-11eb-9d05-dfd86bf4bd7e.png)
+
 
 
 ### Get
