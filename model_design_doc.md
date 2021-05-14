@@ -40,6 +40,16 @@ model_meta.save("/dir_with_model")
 
 ```
 
+Note - currently in the registry the most crucial feature we are missing is the input shape for the training dataset, and the shape of the predictions.
+We should add that in the saving of a model and show it in the UI.
+
+We should add inferring the schema of the model:
+
+https://www.mlflow.org/docs/latest/python_api/mlflow.models.html#mlflow.models.ModelSignature
+
+
+![Screenshot from 2021-05-14 10-24-04](https://user-images.githubusercontent.com/9936580/118243298-930f0680-b49e-11eb-9d05-dfd86bf4bd7e.png)
+
 
 As a reference, when a model is saved in mlflow, a great deal of informaton is saved to describe the model depending on the machine learning library. For example for TensorFlow.
 
@@ -71,16 +81,6 @@ https://www.mlflow.org/docs/latest/models.html#model-api
 - Spacy(spaCy)
 - Fastai(fastai)
 - Statsmodels (statsmodels)
-
-
-We should add inferring the schema of the model:
-
-https://www.mlflow.org/docs/latest/python_api/mlflow.models.html#mlflow.models.ModelSignature
-
-
-![Screenshot from 2021-05-14 10-24-04](https://user-images.githubusercontent.com/9936580/118243298-930f0680-b49e-11eb-9d05-dfd86bf4bd7e.png)
-
-
 
 ### Get
 
