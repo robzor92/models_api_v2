@@ -2,18 +2,24 @@
 
 ## Motivations
 
-A Redesign of the model registry API to be more object-oriented and similar to hsfs.
+A Redesign of the model registry API to be more object-oriented and similar to hsfs. 
+
+This covers the python client. The java client is not as highly prioritized atm, but should also be implemented.
 
 ## Proposed design:
 
 ### Connect
 
+Not resolved how to deal with duplicate code when calling the *connect* in *hsfs* and *hsmr*. Instead of duplicating the config parameters we could create a .connection file which is read by the other connect. Although magic behind the scenes may also confuse users.
+
 ```python
 
 # (H)pswork(s) (M)odel (R)egistry
 import hsmr
+
 # Create a connection
 connection = hsmr.connection()
+
 # Get the model registry handle for a project's model registry
 mr = connection.get_model_registry()
 
