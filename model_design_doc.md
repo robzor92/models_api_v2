@@ -29,7 +29,7 @@ Instead of calling `model.export`, users create a model by invoking the `create_
 
 model_meta = mr.create_model(name="mnist",
                              version=1,
-			     model_path="/dir_with_model"
+			     model_path="/dir_with_model" # Alternatively, this can be provided in the save below
 			     overwrite=False,
 			     metrics=None,
 			     description=None,
